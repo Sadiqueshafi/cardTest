@@ -1,0 +1,190 @@
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar" class="shadow   rounded " >
+      <div class="sidebar-header" >
+          <!-- <h3>SADIQUE</h3>
+          <strong>SS</strong> -->
+          <button type="button" id="sidebarCollapse" class="btn btn-success ">
+            <i class="fas fa-align-left"></i>
+        </button>
+      </div>
+
+
+
+      <ul class="list-unstyled components">
+          <li>
+            <div class="card shadow card-responsive" >
+              <div class="paragraphs">
+                <div class="row">
+                    <div class="span4 col-md-12 col-sm-12">
+                      <div class="">
+                        <img  class="card-img-top img-responsive " src="assets/fdsf.jpg">
+                      </div>
+                      <div class=" content-heading" style="color: black;"><h4 style="font-size:medium;">Sadique Shafi </h4>
+                        <p style="font-size: small;" > hy I am Sadique Shafi</p>
+
+                    </div>
+                  </div>
+                  </div>
+              </div>
+
+
+            </div>
+
+          </li>
+          <li>
+             <div class="card shadow"  >
+              <!-- <div class="content-heading" style="color: black;"></div> -->
+              <h5 class="card-title" >View Toggle</h5>
+              <div class="toggle" style="color: black; margin-top: 20px;">
+                <div class="a d-inline" (click)="showvertile()">
+                  <i class="fas fa-align-left  fa-2x" style="float: center; margin-right: 10px;" ></i>
+                </div>
+                <div class="b d-inline" (click)="showhoriZontal()">
+                  <i class="fas fa-bars fa-2x" style="float: center;" ></i>
+                </div>
+                <!-- <i class="fas fa-file"></i> -->
+              </div>
+              <!-- <div class="d-inline p-2 bg-dark text-white">d-inline</div> -->
+            </div>
+
+          </li>
+          <li>
+            <div class="card shadow"  >
+             <!-- <div class="content-heading" style="color: black;"></div> -->
+             <h5 class="card-title" >Have a FeedBack</h5>
+             <button type="button" id="form" class="btn btn-primary "  data-toggle="modal" data-target="#exampleModal" style="background-color: gray;" >we are Listening </button>
+             </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content" style=" background-color: #EBF2F7;">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel" style="color: black;">Thanks You so much for Taking the Time</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+<div class=" container col-md-12">
+  <div class="row">
+    <form  [formGroup]="formData" #myform="ngForm" (ngSubmit)="onSubmit()">
+      <div class="form-group ">
+        <div class="headingcol-md-12" style="text-align: left;">
+          <label for="FirstName" style="text-align: left;">First Name</label>
+        </div>
+        <input  formControlName="FirstName" type="email"
+        placeholder="Enter First name" class="form-control shadow-lg" [class.is-invalid]="
+                formData.get('FirstName').hasError('required')
+                    " />
+    <div *ngIf="formData.get('FirstName').hasError('required') "
+        class="text-danger small" style="float: left;">
+        first name is required.
+    </div>
+  </div>
+  <div class="form-group">
+    <div class="headingcol-md-12" style="text-align: left;">
+      <label for="LastName">Last Name</label>
+    </div>
+    <input  formControlName="LastName" type="email"
+    placeholder="Enter First name" class="form-control shadow-lg" [class.is-invalid]="
+            formData.get('LastName').hasError('required')
+                " />
+                <div *ngIf="formData.get('LastName').hasError('required') "
+                class="text-danger small" style="float: left;">
+                Last name is required.
+            </div>
+</div>
+<div class="form-group">
+  <div class="headingcol-md-12" style="text-align: left;">
+    <label for="Address">address</label>
+  </div>
+  <textarea  formControlName="Address"  class="form-control shadow-lg" type="text" placeholder="Address details"
+
+               ></textarea>
+              <!-- <div *ngIf="formData.get('address').hasError('required')" &&
+              class="alert alert-danger">
+              address is required.
+          </div> -->
+            </div>
+
+
+            <div class="form-group">
+              <div class="headingcol-md-12" style="text-align: left;">
+                <label for="exampleInputEmail1">Country</label>
+              </div>
+              <select  formControlName="Country" type="text" placeholder="last name"
+             [class.is-invalid]="
+                      formData.get('Country').hasError('required') && myform.submitted" class=" form-control shadow-lg mdb-select md-form" searchable="Search here..">
+                <option value="" disabled selected>Choose your country</option>
+                <option value="1">USA</option>
+                <option value="2">Germany</option>
+                <option value="3">France</option>
+                <option value="3">Poland</option>
+                <option value="3">Japan</option>
+              </select>
+
+          <div *ngIf="formData.get('Country').hasError('required') && myform.submitted"
+              class="alert alert-danger">
+              Country is Required.
+          </div>
+              </div>
+      <div class="form-group">
+        <div class="headingcol-md-12" style="text-align: left;">
+          <label for="email">Email ID</label>
+        </div>
+        <input  type="email" formControlName="emailId" class="form-control shadow-lg" placeholder="EmailId"
+        [class.is-invalid]="
+    formData.get('emailId').hasError('required')
+        " />
+    <div *ngIf="formData.get('emailId').hasError('required') "
+        class="alert alert-danger">
+        EmailId is required.
+    </div>
+   </div>
+
+        <div class="form-group">
+          <div class="headingcol-md-12" style="text-align: left;">
+            <label for="PhoneNo">Phone No</label>
+          </div>
+          <input formControlName="PhoneNo" type="number" placeholder="last name"
+          class="form-control shadow-lg" [class.is-invalid]="
+                  formData.get('PhoneNo').hasError('required')
+                      " />
+      <div *ngIf="formData.get('PhoneNo').hasError('required')"
+          class="alert alert-danger">
+          PhoneNo is Required.
+      </div>
+          </div>
+
+      <button type="submit" class="ss btn btn-success">Submit FeedBack</button>
+    </form>
+
+</div>
+
+      </div>
+    </div>
+  </div></div>
+</div>
+
+         </li>
+      </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+
+      <nav class="navbar">
+          <div class="container-fluid">
+
+              <!-- <h1 > hello</h1> -->
+              <app-horizontalcart *ngIf="showhorizontal" class="col-md-12 col-sm-12">this is horizontal</app-horizontalcart>
+              <app-verticalcart *ngIf="showverticle" class="col-md-12 col-sm-12">this is verticle</app-verticalcart>
+
+          </div>
+      </nav>
+      <!-- <pagination-controls (pageChange)="p = $event" class="float-right"></pagination-controls> -->
+      <!-- <app-horizontalcart></app-horizontalcart> -->
+  </div>
+</div>
