@@ -1,8 +1,13 @@
 {
   "name": "card-task-project",
   "version": "0.0.0",
+  "engines": {
+    "node": "v16.5.0",
+    "npm": "7.19.1"
+  },
   "scripts": {
     "ng": "ng",
+    "postinstall": "ng build --output-path angularapp  --aot --prod",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
@@ -10,6 +15,8 @@
   },
   "private": true,
   "dependencies": {
+    "@angular/cli": "~12.1.2",
+    "@angular/compiler-cli": "~12.1.2",
     "@angular/animations": "~12.1.2",
     "@angular/common": "~12.1.2",
     "@angular/compiler": "~12.1.2",
@@ -25,7 +32,8 @@
     "ngx-pagination": "^5.1.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.2.0",
-    "zone.js": "~0.11.4"
+    "zone.js": "~0.11.4",
+    "typescript": "~4.3.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~12.1.2",
